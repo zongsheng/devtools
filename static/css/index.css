@@ -1,0 +1,18 @@
+*{border-radius:0!important;}
+.alert1{padding:6px;padding-right:35px;}
+.alert2{padding:15px;border-radius:0px;}
+.no-padding-right{padding-right:0!important;}
+.no-padding-left{padding-left:0!important;}
+.no-padding{padding:0!important;}
+.mb15{margin-bottom:15px!important;}
+.CodeMirror {border:1px solid #ccc; font-size:16px;min-height:400px;border-radius:4px;}
+body{background-color:#f8f8f8;}
+.padding15{padding:0 15px;}
+.rowmain{width: 100%;height:auto;overflow: hidden;}
+.footer{height:44px;line-height:46px;color:#AAA;text-align:center;font-size:12px;}
+.showTime{height:auto; font-size: 16px; color: #2B5180!important; padding-right: 0!important;}
+#copyTip{position:absolute;top:0px;z-index:9999;width:100%;text-align:center;display:none;}
+.form-tab-bar{position: absolute;right: 0px;top:20px;border:1px solid #CCC; background: #FFF;height: 30px;overflow: hidden;}
+.form-tab-bar span{display: block;float:left;height:30px;line-height:30px; padding: 0 10px;cursor: pointer; color: #444;}
+.form-tab-bar span.current{background: #428bca;color:#FFF;}
+.form-tab-bar span.run-result{border-right:1px solid #CCC;}

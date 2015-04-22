@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<title>Web开发助手 - Power by 徐宗胜</title>
+<meta charset="utf-8" />
+<link rel="shortcut icon" href="./static/images/favicon.ico" type="image/x-icon">
+<!-- 新 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="./assets/codemirror/lib/codemirror.css">
+<link rel="stylesheet" href="./assets/codemirror/addon/fold/foldgutter.css">
+<link rel="stylesheet" href="./assets/codemirror/addon/dialog/dialog.css">
+<link rel="stylesheet" href="./assets/codemirror/theme/monokai.css">
+<link rel="stylesheet" href="./static/css/index.css">
+</head>
+<body>
+<div class="alert alert2 alert-success alert-dismissible" id="copyTip"><i class="glyphicon glyphicon-ok-sign"></i> 复制成功！ </div>
+
+<div class="navbar navbar-default mb15" style="border-radius:0;">
+    <div class="rowmain padding15">
+        <div class="navbar-header">
+            <a class="navbar-brand" style="padding-left:0px;" href="./">Web开发助手</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active navbar-header"><a href="#home">代码运行</a></li>
+                <li><a href="#help">帮助中心</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a class="showTime" id="showBeijingTime"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+<div class="rowmain padding15">
+    <div class="col-xs-6 no-padding">
+        <div class="col-xs-12 no-padding mb15">
+            <div class="btn-group">
+                <button type="button" class="btn btn-default" onclick="codeHelper.insertPhp();">插入php边界符</button>
+                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu">
+                    <li><a href="#" onclick="codeHelper.insertPhpPreg();return false;">插入php正则</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" onclick="codeHelper.insertHtml();return false;">插入完整HTML</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#">更多功能完善中...</a></li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-primary btn-copy-clipboard" copyObj="code">复制当前代码</button>
+            <div class="alert alert1 alert-danger alert-dismissible" id="codeTip" style="position:absolute;top:0px;z-index: 9999;width:300px;right:0px;display:none;">
+                <button type="button" class="close" onclick="$('.alert-dismissible').hide();"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <strong>错误!</strong> 代码不能为空！
+            </div>
+        </div>
+        <textarea class="form-control" id="code"></textarea>
+        <button class="btn btn-primary navbar-btn" onclick="codeHelper.run();" id="runButton"> 运行程序 </button>
+        <button class="btn btn-default navbar-btn" onclick="codeHelper.reset();"> 清空 </button>
+    </div>
+    <div class="col-xs-6 no-padding-right" style="position: relative;">
+        <div class="col-xs-12 no-padding mb15">
+          <button type="button" class="btn btn-primary btn-copy-clipboard" copyObj="runResultHtml">复制执行结果</button>
+        </div>
+        <div class="form-control tools-run-result" id="runResult" style="clear:both;height:400px;overflow: hidden;overflow-y: scroll;display: none;border-top-right-radius:0;">此处展示运行结果</div>
+        <textarea class="form-control tools-run-result" style="height: 400px; border-top-right-radius:0;" placeholder="此处展示运行结果的HTML源码" id="runResultHtml"></textarea>
+        <div class="form-tab-bar">
+            <span class="run-result" rel="runResult">运行结果</span>
+            <span class="ren-result-html current" rel="runResultHtml">HTML源码</span>
+        </div>
+    </div>
+</div>
+<div class="navbar navbar-default navbar-fixed-bottom no-padding" style="border-radius:0;">
+    <div class="container">
+        <div class="footer">Web开发助手 - Power by 徐宗胜 <span style="font-family:Arial;">Copyright &copy; 2013 - <script>var yearStr;now = new Date();yearStr = now.getFullYear();document.write(yearStr);</script> Helper. All Rights Reserved</span></div>
+    </div>
+</div>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="./static/js/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- 最新的 codemirror 核心 JavaScript 文件 -->
+<script src="./assets/codemirror/lib/codemirror.js"></script>
+<script src="./assets/codemirror/addon/edit/matchbrackets.js"></script>
+<script src="./assets/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="./assets/codemirror/mode/xml/xml.js"></script>
+<script src="./assets/codemirror/mode/javascript/javascript.js"></script>
+<script src="./assets/codemirror/mode/css/css.js"></script>
+<script src="./assets/codemirror/mode/clike/clike.js"></script>
+<script src="./assets/codemirror/mode/php/php.js"></script>
+<script src="./assets/codemirror/keymap/sublime.js"></script>
+<script src="./assets/zeroclipboard/ZeroClipboard.js"></script>
+<!-- 页面 核心 JavaScript 文件 -->
+<script src="./static/js/index.js"></script>
+</body>
+</html>
