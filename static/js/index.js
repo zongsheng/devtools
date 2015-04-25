@@ -13,6 +13,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     indentWithTabs: true,
     autofocus: true
 });
+emmetCodeMirror(editor);
 
 var codeHelper = {
     run : function () {
