@@ -41,6 +41,15 @@ var codeHelper = {
             },
             beforeSend:function(){
                 $("#runButton").html('运行中...').attr('disabled','disabled');
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                var status = XMLHttpRequest.status;
+                if (status == 404) {
+                    msgTip('请配置run.php','error');
+                } else {
+                    msgTip('运行失败，请检查！','error');
+                }
+                $("#runButton").html('运行程序').removeAttr('disabled');
             }
         });
     },
@@ -88,10 +97,7 @@ $('.btn-copy-clipboard').each(function(){
         client.setText(value);
     });
     client.on('aftercopy', function () {
-        $('#copyTip').fadeIn();
-        setTimeout(function(){
-            $('#copyTip').fadeOut();
-        },2500);
+        msgTip('复制成功！','success');
     });
 });
 
@@ -104,6 +110,23 @@ $('.form-tab-bar span').click(function(){
         $('#'+id).focus();
     }
 });
+var msgTipTimeout = null;
+function msgTip(content,type) {
+    clearTimeout(msgTipTimeout);
+    if (type == 'error') {
+        $('#msgTip').removeClass('alert-success').addClass('alert-danger');
+        content = '<i class="glyphicon glyphicon-remove-sign"></i> ' + content;
+    }
+    if (type == 'success') {
+        $('#msgTip').removeClass('alert-danger').addClass('alert-success');
+        content = '<i class="glyphicon glyphicon-ok-sign"></i> ' + content;
+    }
+    $('#msgTip').html(content);
+    $('#msgTip').fadeIn();
+    msgTipTimeout = setTimeout(function(){
+        $('#msgTip').fadeOut();
+    },2500);
+}
 
 //北京时间
 (function startTime() {

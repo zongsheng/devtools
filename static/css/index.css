@@ -11,7 +11,7 @@ body{background-color:#f8f8f8;}
 .rowmain{width: 100%;height:auto;overflow: hidden;}
 .footer{height:44px;line-height:46px;color:#AAA;text-align:center;font-size:12px;}
 .showTime{height:auto; font-size: 16px; color: #2B5180!important; padding-right: 0!important;}
-#copyTip{position:absolute;top:0px;z-index:9999;width:100%;text-align:center;display:none;}
+#msgTip{position:absolute;top:0px;z-index:9999;width:100%;text-align:center;display:none;}
 .form-tab-bar{position: absolute;right: 0px;top:20px;border:1px solid #CCC; background: #FFF;height: 30px;overflow: hidden;}
 .form-tab-bar span{display: block;float:left;height:30px;line-height:30px; padding: 0 10px;cursor: pointer; color: #444;}
 .form-tab-bar span.current{background: #428bca;color:#FFF;}
