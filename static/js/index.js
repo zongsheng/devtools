@@ -13,6 +13,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     indentWithTabs: true,
     autofocus: true
 });
+
 emmetCodeMirror(editor);
 
 var codeHelper = {
@@ -110,6 +111,7 @@ $('.form-tab-bar span').click(function(){
         $('#'+id).focus();
     }
 });
+
 var msgTipTimeout = null;
 function msgTip(content,type) {
     clearTimeout(msgTipTimeout);
