@@ -16,6 +16,16 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
 });
 
 emmetCodeMirror(editor);
+
+editor.setOption("extraKeys", {  
+    Tab: function(cm) {  
+        if (cm.somethingSelected()) {
+            cm.indentSelection('add');
+        } else {
+            cm.replaceSelection(Array(cm.getOption("indentUnit") + 1).join(" "), "end", "+input");
+        }
+    }
+});
 var codeHelper = {
     run : function () {
         var code = editor.getValue();
