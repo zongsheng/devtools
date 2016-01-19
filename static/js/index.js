@@ -15,22 +15,6 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     autofocus: true
 });
 
-editor.setOption("extraKeys", {  
-    Tab: newTab
-});
-
-function newTab(cm) {  
-    if (cm.somethingSelected()) {
-        cm.indentSelection('add');
-    } else {
-        if (cm.replaceSelection(cm.getOption)) {
-            cm.replaceSelection("\t");
-        } else {
-            cm.replaceSelection(Array(cm.getOption("indentUnit") + 1).join(" "), "end", "+input");
-        }
-    }
-}
-
 emmetCodeMirror(editor);
 var codeHelper = {
     run : function () {
