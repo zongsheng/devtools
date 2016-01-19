@@ -10,12 +10,28 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
     keyMap: "sublime",
     indentUnit: 4,
     theme: "monokai",
-    indentWithTabs: true,
+    indentWithTabs: false,
+    tabSize:4,
     autofocus: true
 });
 
-emmetCodeMirror(editor);
+editor.setOption("extraKeys", {  
+    Tab: newTab
+});
 
+function newTab(cm) {  
+    if (cm.somethingSelected()) {
+        cm.indentSelection('add');
+    } else {
+        if (cm.replaceSelection(cm.getOption)) {
+            cm.replaceSelection("\t");
+        } else {
+            cm.replaceSelection(Array(cm.getOption("indentUnit") + 1).join(" "), "end", "+input");
+        }
+    }
+}
+
+emmetCodeMirror(editor);
 var codeHelper = {
     run : function () {
         var code = editor.getValue();
