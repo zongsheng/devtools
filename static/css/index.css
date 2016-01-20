@@ -18,6 +18,7 @@ body{background-color:#f8f8f8;}
 .form-tab-bar span.run-result{border-right:1px solid #CCC;}
 #runResult{clear:both;height:400px;overflow: hidden;overflow-y: scroll;display: none;border-top-right-radius:0;}
 #codeTip{position:absolute;top:0px;z-index: 9999;width:300px;right:0px;display:none;}
+.tools-run-result{resize:vertical}
 
 .devtools-container{padding: 15px;}
 .drag-subfield{height: 400px; width: 15px; position: absolute; top: 49px; left: 50%; z-index: 10000; cursor: col-resize; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAcBAMAAACqkzMIAAAAHlBMVEUAAABaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlrPtHcwAAAACXRSTlMA81pRmJAyaF2B0JXOAAAAIUlEQVQI12MIcWNIcWWYOZ2hcyaD5CQGy4mDiAS7CuJCAMaHKiNsY07hAAAAAElFTkSuQmCC) center center no-repeat; background-size: 4px 12px;}
