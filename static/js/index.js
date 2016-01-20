@@ -229,3 +229,43 @@ setInterval(function(){
         startTime();
     },1000);
 }());
+
+//拖拽分栏
+(function() {
+    function Element_PageX() {
+        var PageX   = eventThat.pageX;
+        return pageObj = {
+            axes : PageX,
+            axesLeft: $('#leftField').innerWidth()
+        }
+    }
+    function mouseHandler(e) {
+        eventThat = e;
+        that = $(this);
+        var parentPage = Element_PageX(); 
+        var windowWidth = $('html').width();
+        $(document).bind('mousemove', function (eMove) {
+            var divPos  = eMove.pageX - parentPage.axes;
+            var divLeft = parentPage.axesLeft + divPos;
+            if (divLeft < 500 || (windowWidth - divLeft) < 500) return false;
+            var percent = (divLeft/windowWidth)*100;
+            var leftPercent  = percent +'%';
+            var rightPercent = (100 - percent) +'%';
+            $('#leftField').width(leftPercent);
+            $('#rightField').width(rightPercent);
+            that.css({left:leftPercent});
+        })
+
+        $(document).bind('mouseup', function (e) {
+            reMoveBind();
+        });
+        return false;
+    }
+    function reMoveBind() {
+        $(document).unbind('mousemove');
+        $(document).unbind('mouseup');	
+        $(document).unbind('mousedown');	
+        return false;
+    }
+    $('.drag-subfield').bind('mousedown', mouseHandler);
+})();

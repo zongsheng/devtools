@@ -8,7 +8,7 @@
 .CodeMirror {border:1px solid #ccc; font-size:16px;min-height:400px;border-radius:4px;}
 body{background-color:#f8f8f8;}
 .padding15{padding:0 15px;}
-.rowmain{width: 100%;height:auto;overflow: hidden;}
+.rowmain{width: 100%;height:auto;overflow: hidden; position: relative; min-width: 800px;}
 .footer{height:44px;line-height:46px;color:#AAA;text-align:center;font-size:12px;}
 .showTime{height:auto; font-size: 16px; color: #2B5180!important; padding-right: 0!important;}
 #msgTip{position:absolute;top:0px;z-index:9999;width:100%;text-align:center;display:none;}
@@ -16,3 +16,9 @@ body{background-color:#f8f8f8;}
 .form-tab-bar span{display: block;float:left;height:30px;line-height:30px; padding: 0 10px;cursor: pointer; color: #444;}
 .form-tab-bar span.current{background: #428bca;color:#FFF;}
 .form-tab-bar span.run-result{border-right:1px solid #CCC;}
+#runResult{clear:both;height:400px;overflow: hidden;overflow-y: scroll;display: none;border-top-right-radius:0;}
+#codeTip{position:absolute;top:0px;z-index: 9999;width:300px;right:0px;display:none;}
+
+.devtools-container{padding: 15px;}
+.drag-subfield{height: 400px; width: 15px; position: absolute; top: 49px; left: 50%; z-index: 10000; cursor: col-resize; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAcBAMAAACqkzMIAAAAHlBMVEUAAABaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlpaWlrPtHcwAAAACXRSTlMA81pRmJAyaF2B0JXOAAAAIUlEQVQI12MIcWNIcWWYOZ2hcyaD5CQGy4mDiAS7CuJCAMaHKiNsY07hAAAAAElFTkSuQmCC) center center no-repeat; background-size: 4px 12px;}
+.right-field-inner{padding-left: 15px;}
