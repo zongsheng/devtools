@@ -77,13 +77,13 @@ var codeHelper = {
         codeHelper.insertContent("<?php\r\n\r\n?>", 1, 0);
     },
     insertHtml : function () {
-        codeHelper.insertContent("<!doctype html>\r\n<html>\r\n<head>\r\n<title>Web开发助手 - Power by 徐宗胜</title>\r\n<meta charset=\"utf-8\" />\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>", 7, 0);
+        codeHelper.insertContent("<!doctype html>\r\n<html>\r\n<head>\r\n<title>Web开发助手 - Power by ZongZi</title>\r\n<meta charset=\"utf-8\" />\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>", 7, 0);
     },
     insertPhpPreg : function () {
         codeHelper.insertContent("<?php\r\n$pattern = \"/test/\";\r\n$content = \"test\";\r\n$result  = preg_match($pattern, $content, $dataArr);\r\nvar_dump($result);\r\nvar_dump($dataArr);\r\n?>", 1, 15);
     },
     insertContent : function(content,line,ch) {
-        //editor.replaceRange("<!doctype html>\r\n<html>\r\n<head>\r\n<title>Web开发助手 - Power by 徐宗胜</title>\r\n<meta charset=\"utf-8\" />\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>",pos);
+        //editor.replaceRange("<!doctype html>\r\n<html>\r\n<head>\r\n<title>Web开发助手 - Power by ZongZi</title>\r\n<meta charset=\"utf-8\" />\r\n</head>\r\n<body>\r\n\r\n</body>\r\n</html>",pos);
         var rng = editor.getSelection();
         if (rng) {
             editor.replaceSelection(content,rng);
