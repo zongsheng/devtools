@@ -39,7 +39,7 @@ var codeHelper = {
         var ajaxRunObj = $.ajax({
             url:"ajaxRun.php?token=6e12c60a96ad6517471294007f663ec4",
             type:"post",
-            timeout:1000,
+            timeout:1000000000,
             cache:false,
             data:{code:code},
             success:function(data){
